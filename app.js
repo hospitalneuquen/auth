@@ -10,7 +10,7 @@ var express = require('express'),
     swagger = require('swagger-jsdoc');
 
 // Connect to MongoDB
-//mongoose.connect(config.mongo);
+mongoose.connect(config.mongo);
 
 // Express config
 var app = express();
