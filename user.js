@@ -21,6 +21,7 @@ module.exports = {
                         return callback(new Error("Not found"));
 
                     var variables = {};
+                    var servicioActual = [];
                     data.forEach(function(i) {
                         var value = isNaN(i.value) ? i.value : Number(i.value);
                         if (i.multipleValues) {
@@ -77,6 +78,21 @@ module.exports = {
                                     });
                                     asyncCallback();
                                 });
+                            } else {
+                                asyncCallback();
+                            }
+                        },
+                        // 3. servicio actual
+                        function(asyncCallback) {
+                            if (variables.ubicacion) {
+                                var ubicaciones = variables.ubicacion;
+                                ubicaciones.forEach(function(ubicacion){
+                                    if (ubicacion.tipo == 'servicio'){
+                                        variables.servicioActual = ubicacion;
+                                    }
+                                });
+
+                                asyncCallback();
                             } else {
                                 asyncCallback();
                             }
