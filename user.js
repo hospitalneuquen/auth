@@ -106,6 +106,7 @@ module.exports = {
                                 name: data[0].name,
                                 given_name: data[0].given_name,
                                 family_name: data[0].family_name,
+                                avatar: (data[0].avatar) ? data[0].avatar : '',
                                 variables: variables
                             });
                     });

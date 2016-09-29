@@ -63,6 +63,7 @@ router.post('/login', function(req, res, next) {
             sub: data.id,
             id: data.id,
             name: data.name,
+            avatar: (data.avatar) ? data.avatar : '',
             given_name: data.given_name,
             family_name: data.family_name,
             scope: {
